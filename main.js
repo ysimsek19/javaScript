@@ -108,8 +108,7 @@ function degerdegistir(){    // ilk başta 3 modelinde gözükmesini istiyoruz
 var cars = ["Saab", "Volvo", "BMW"];
 
 var ydeger=document.getElementById("deger").value;
-//cars[0] = ydeger;
-ydeger=cars[0];
+cars[0] = ydeger;
 document.getElementById("modeller").innerHTML = cars;
 
 }
@@ -128,3 +127,15 @@ document.getElementById("modeller").innerHTML = cars;
          
         }
         
+
+var fruits, text, fLen, i;
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+fLen = fruits.length;
+
+text = "<ul>";
+for (i = 0; i < fLen; i++) {
+  text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ul>";
+
+document.getElementById("fordongu").innerHTML = text;
