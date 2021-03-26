@@ -32,15 +32,16 @@ function secilen(){
 $(document).ready(function () {
        $('input[type=radio]').click(function () {
           // document.getElementById('price').innerHTML = $(this).val();
+          
           var val1=$(this).val();
           if(val1=="25"){
-              $(".resim").attr("src","image/pizzaS.png")
+              $(".resiml").attr("src","image/pizzaL.jpg")
           }
           else if(val1=="20"){
-            $(".resim").attr("src","image/lamba.gif")
+            $(".resimm").attr("src","image/pizzaL.png")
           }
           else if(val1=="15"){
-            $(".resim").attr("src","image/ampul.gif")  
+            $(".resims").attr("src","image/pizzaS.png")  
           }
           var pizza=document.getElementById("pizza").value;
           document.getElementById("pizzafiyati").innerHTML=parseInt(val1)*parseInt(pizza);
