@@ -10,17 +10,13 @@ var pizzatoplam=parseInt(pizza)*parseInt(document.querySelector('input[name="isl
     //thesap=parseInt(pizzatoplam)+(parseInt(durum)*16)+(parseInt(pizzaex)*3)+(parseInt(kola)*9);
     thesap=parseInt(pizzatoplam)+parseInt(pizzaex*3)+parseInt(durum*16)+parseInt(kola*9)
     document.getElementById("tutar").value=thesap;
-    
 } 
-
 
 function myFunction(){
     
     var fiyat=document.querySelector('input[name="islem"]:checked').value;
     var pizza=document.getElementById("pizza").value;
 document.getElementById("pizzafiyati").innerHTML=parseInt(fiyat)*parseInt(pizza);
-
-
 
 }
 
@@ -35,10 +31,10 @@ $(document).ready(function () {
           
           var val1=$(this).val();
           if(val1=="25"){
-              $(".resiml").attr("src","image/pizzaL.jpg")
+              $(".resiml").attr("src","image/pizzaL.png")
           }
           else if(val1=="20"){
-            $(".resimm").attr("src","image/pizzaL.png")
+            $(".resimm").attr("src","image/pizzaM.png")
           }
           else if(val1=="15"){
             $(".resims").attr("src","image/pizzaS.png")  
@@ -48,3 +44,4 @@ $(document).ready(function () {
        });
 
    });
+

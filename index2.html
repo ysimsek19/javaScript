@@ -5,14 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+<style>
+    body{
+        background-color: rgb(210, 231, 231);
+        background-image: url("/image/pizzaarka2.png") ;
+        width: 100%; 
+        height: 60%;
+        background-repeat:no-repeat;
+         background-position:top center;
+        
+    }
+</style>
 </head>
-<body>
+<body   >
 
     <form name="toplam">
+        
+        <img src="image/pizzaL.png" class="resiml" alt="" style="width: 200px; height: 200px;"> 
         <input type="radio" name="islem" value="25" checked id="buyuk"  > Büyük Boy
-        <img src="image/pizzaL.jpg" class="resim" alt="" style="width: 100px; height: 100px;">
+        <img src="image/pizzaM.png" class="resimm" alt="" style="width: 150px; height: 150px;"> 
         <input type="radio" name="islem" value="20" id="orta"> Orta Boy
+        <img src="image/pizzaS.png" class="resims" alt="" style="width: 100px; height: 100px;"> 
         <input type="radio" name="islem" value="15" id="kucuk"> Küçük Boy <br>
         <label id="secimfiyati"></label>
         </form>
@@ -20,22 +33,47 @@
     <input type="text" id="pizzaex" placeholder="pizza ek">
     <input type="text" id="durum" placeholder="durum sayısı">
     <input type="text" id="kola" placeholder="adet">
-    <input type="button" value="Hesapla" id="toplamtutar" onclick="toplamtutar()">
+    <button   class="ui primary button"  value="Hesapla" id="toplamtutar" onclick="toplamtutar()">   Hesabla  </button>
+ 
+    <label for="">Toplam Ödeme</label>
     <input type="text" id="tutar" placeholder="sonuc"> <br><br>
 
  <label id="pizzafiyati"></label>
 
-
-
-
- 
     <br>
     <div id="kutuToplam"></div>
+
+
+
+
+<!--<select id="secim">
+    <option value="Seçim Yap">Seçiniz</option>
+    <option value="Ali">Ali</option>
+    <option value="Ayşe">Ayşe</option>
+    <option value="Mehmet">Mehmet</option>
+    <option value="Fatma">Fatma</option>
+  </select>
+ 
+    <div id="kutu"></div> -->
+
 <script src="jquery-3.6.0.min.js" ></script>
+<script src="semantic.min.css" ></script>
+<script src="semantic.min.js" ></script>
     <script src="main1.js"></script>
 
-    <script>
+  <!--  <script>
       
+      $(document).ready(function() {
+ 
+ //Seçim değiştiğinde çalışacak kodlar
+  
+ $("#secim").on("change",function(){
+ $("#kutu").html($("#secim").val());
+ })
+  
+ });-->
+
+
     </script>
 </body>
 </html>
