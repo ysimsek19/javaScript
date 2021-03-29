@@ -18,7 +18,7 @@
     .pizza {
   width: 100px;
   height: 100px;
-  border-radius: 50px;
+  border-radius: 100px;
 }
 </style>
 </head>
@@ -26,29 +26,30 @@
 
     <select id="secim" >
         <option value="0" >Seçiniz</option>
-        <option value="1" data-resim="karışıkpizza.png" data-malzeme="biber,domates,mantar,sucuk,zeytin,jonbon,sucuk">Karışık</option>
-        <option value="2" data-resim="sucuklupizza.png" data-malzeme="sucuk,biber,zeytin,peynir">Sucuklu</option>
-        <option value="3" data-resim="mantarlipizza.png" data-malzeme="mantar, mozerella peynir, biber, zeytin">Mantarlı</option>
+        <option value="1" data-resim="image/karışıkpizza.png" data-malzeme="biber,domates,mantar,sucuk,zeytin,jonbon,sucuk" data-fiyat="25,20,15">Karışık</option>
+        <option value="2" data-resim="image/sucuklupizza.jpg" data-malzeme="sucuk,biber,zeytin,peynir" data-fiyat="30,25,20">Sucuklu</option>
+        <option value="3" data-resim="image/mantarlipizza.png" data-malzeme="mantar, mozerella peynir, biber, zeytin" data-fiyat="27,22,18">Mantarlı</option>
       </select>
       <label class="malzeme"></label>
-      
+      <label class="fiyat"></label>
         <div id="kutu"></div> 
 
     <form name="toplam">
         
-        <img class="pizza" src="image/pizzaL.png" class="resiml" alt="" style="width: 200px; height: 200px;"> 
+        <img class="pizza" src="image/karışıkpizza.png" class="resiml" alt="" style="width: 200px; height: 200px;"> 
         <input type="radio" name="islem" value="25" checked id="buyuk"  > Büyük Boy (33 cm)
-        <img src="image/pizzaM.png" class="resimm" alt="" style="width: 150px; height: 150px;"> 
+        <img src="image/karışıkpizza.png" class="resimm" alt="" style="width: 150px; height: 150px;"> 
         <input type="radio" name="islem" value="20" id="orta"> Orta Boy (25 cm)
-        <img src="image/pizzaS.png" class="resims" alt="" style="width: 100px; height: 100px;"> 
+        <img src="image/karışıkpizza.png" class="resims" alt="" style="width: 100px; height: 100px;"> 
         <input type="radio" name="islem" value="15" id="kucuk"> Küçük Boy (18 cm) <br>
         <label id="secimfiyati"></label>
         </form>
-    <br> <input type="text" id="pizza" placeholder="pizza sayısı" onkeyup="myFunction()" value="1">
+    <br> <input type="text" id="pizza" placeholder="pizza sayısı" onkeyup="myFunction()" value="4">
     <input type="text" id="pizzaex" placeholder="pizza ek">
     <input type="text" id="durum" placeholder="durum sayısı">
     <input type="text" id="kola" placeholder="adet">
-    <button   class="ui primary button"  value="Hesapla" id="toplamtutar" onclick="toplamtutar()">   Hesabla  </button>
+    <button   class="ui primary button"  value="Hesapla" id="toplamtutar" onclick="toplamtutar()">  Hesabla </button>
+    
  
     <label for="">Toplam Ödeme</label>
     <input type="text" id="tutar" placeholder="sonuc">   <br><br>

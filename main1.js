@@ -3,16 +3,17 @@ $("#secim").change(function () {
     var data = $(this).val();
     var resim = $(this).find(":selected").attr("data-resim");
     var malzeme = $(this).find(":selected").attr("data-malzeme");
-
+    var malzeme = $(this).find(":selected").attr("data-malzeme");
 
 
     if(data != 0){
         $(".pizza").attr("src", resim);
-        $(".malzeme").html(malzeme)
+        $(".malzeme").html(malzeme);
+        $(".fiyat").html(fiyat);
     }
         else{
             $(".pizza").attr("src", "https://img.lovepik.com/free_png/32/42/82/20v58PICD9d7z4V41T3Ui_PIC2018.png_860.png");
-            $(".malzeme").html('')
+            $(".malzeme").html('')}
 
 
 
@@ -49,17 +50,31 @@ $(document).ready(function () {
           
           var val1=$(this).val();
           if(val1=="25"){
-              $(".resiml").attr("src","image/pizzaL.png")
+              $(".resiml").attr("src","image/karışıkpizza.png")
           }
           else if(val1=="20"){
-            $(".resimm").attr("src","image/pizzaM.png")
+            $(".resimm").attr("src","image/karışıkpizza.png")
           }
           else if(val1=="15"){
-            $(".resims").attr("src","image/pizzaS.png")  
+            $(".resims").attr("src","image/karışıkpizza.png")  
           }
+
+          var val2=$(this).val();
+          if(val2=="30"){
+              $(".resiml").attr("src","image/sucuklukpizza.png")
+          }
+          else if(val2=="25"){
+            $(".resimm").attr("src","image/sucuklukpizza.png")
+          }
+          else if(val2=="20"){
+            $(".resims").attr("src","image/sucuklukpizza.png")  
+          }
+
+
+
           var pizza=document.getElementById("pizza").value;
           document.getElementById("pizzafiyati").innerHTML=parseInt(val1)*parseInt(pizza);
        });
 
    });
-
+});
