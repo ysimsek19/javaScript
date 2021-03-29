@@ -1,3 +1,21 @@
+
+$("#secim").change(function () {
+    var data = $(this).val();
+    var resim = $(this).find(":selected").attr("data-resim");
+    var malzeme = $(this).find(":selected").attr("data-malzeme");
+
+
+
+    if(data != 0){
+        $(".pizza").attr("src", resim);
+        $(".malzeme").html(malzeme)
+    }
+        else{
+            $(".pizza").attr("src", "https://img.lovepik.com/free_png/32/42/82/20v58PICD9d7z4V41T3Ui_PIC2018.png_860.png");
+            $(".malzeme").html('')
+
+
+
 function toplamtutar(){ 
     
     var pizza=document.getElementById("pizza").value;

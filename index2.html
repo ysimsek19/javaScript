@@ -15,21 +15,28 @@
          background-position:top center;
         
     }
+    .pizza {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
 </style>
 </head>
 <body   >
 
     <select id="secim" >
-        <option value="0">Seçiniz</option>
-        <option value="1">Karışık</option>
-        <option value="2">Sucuklu</option>
-        <option value="3">Tavuklu</option>
+        <option value="0" >Seçiniz</option>
+        <option value="1" data-resim="karışıkpizza.png" data-malzeme="biber,domates,mantar,sucuk,zeytin,jonbon,sucuk">Karışık</option>
+        <option value="2" data-resim="sucuklupizza.png" data-malzeme="sucuk,biber,zeytin,peynir">Sucuklu</option>
+        <option value="3" data-resim="mantarlipizza.png" data-malzeme="mantar, mozerella peynir, biber, zeytin">Mantarlı</option>
       </select>
+      <label class="malzeme"></label>
+      
         <div id="kutu"></div> 
 
     <form name="toplam">
         
-        <img src="image/pizzaL.png" class="resiml" alt="" style="width: 200px; height: 200px;"> 
+        <img class="pizza" src="image/pizzaL.png" class="resiml" alt="" style="width: 200px; height: 200px;"> 
         <input type="radio" name="islem" value="25" checked id="buyuk"  > Büyük Boy (33 cm)
         <img src="image/pizzaM.png" class="resimm" alt="" style="width: 150px; height: 150px;"> 
         <input type="radio" name="islem" value="20" id="orta"> Orta Boy (25 cm)
@@ -61,15 +68,7 @@
 
     <script>
       
-      $(document).ready(function() {
- 
- //Seçim değiştiğinde çalışacak kodlar
-  
- $("#secim").on("change",function(){
- $("#kutu").html($("#secim").val());
- })
-  
- });
+     
 
  
 
