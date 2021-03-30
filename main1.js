@@ -2,14 +2,29 @@
 $("#secim").change(function () {
     var data = $(this).val();
     var resim = $(this).find(":selected").attr("data-resim");
+    var resimm = $(this).find(":selected").attr("data-resim");
+    var resims = $(this).find(":selected").attr("data-resim");
     var malzeme = $(this).find(":selected").attr("data-malzeme");
-    var malzeme = $(this).find(":selected").attr("data-malzeme");
+    var boyfiyat = $(this).find(":selected").attr("data-fiyat");
+    var pyt=boyfiyat.split(",");
+    
+
+    
+    
+        $("#buyuk").val(pyt[0]);
+        $("#orta").val(pyt[1]);
+        $("#kucuk").val(pyt[2]);
+
+        
+       
 
 
     if(data != 0){
         $(".pizza").attr("src", resim);
+        $(".resimm").attr("src", resimm);
+        $(".resims").attr("src", resims);
         $(".malzeme").html(malzeme);
-        $(".fiyat").html(fiyat);
+       
     }
         else{
             $(".pizza").attr("src", "https://img.lovepik.com/free_png/32/42/82/20v58PICD9d7z4V41T3Ui_PIC2018.png_860.png");
@@ -17,27 +32,9 @@ $("#secim").change(function () {
 
 
 
-function toplamtutar(){ 
-    
-    var pizza=document.getElementById("pizza").value;
-    var durum=document.getElementById("durum").value;
-    var pizzaex=document.getElementById("pizzaex").value;
-    var kola=document.getElementById("kola").value;
 
-var pizzatoplam=parseInt(pizza)*parseInt(document.querySelector('input[name="islem"]:checked').value);
-    var thesap="";
-    //thesap=parseInt(pizzatoplam)+(parseInt(durum)*16)+(parseInt(pizzaex)*3)+(parseInt(kola)*9);
-    thesap=parseInt(pizzatoplam)+parseInt(pizzaex*3)+parseInt(durum*16)+parseInt(kola*9)
-    document.getElementById("tutar").value=thesap;
-} 
 
-function myFunction(){
-    
-    var fiyat=document.querySelector('input[name="islem"]:checked').value;
-    var pizza=document.getElementById("pizza").value;
-document.getElementById("pizzafiyati").innerHTML=parseInt(fiyat)*parseInt(pizza);
 
-}
 
 function secilen(){
     var radios = document.querySelectorAll('input[type=radio][value="25"]');
@@ -45,6 +42,8 @@ function secilen(){
 }
 
 $(document).ready(function () {
+
+   
        $('input[type=radio]').click(function () {
           // document.getElementById('price').innerHTML = $(this).val();
           
@@ -57,18 +56,11 @@ $(document).ready(function () {
           }
           else if(val1=="15"){
             $(".resims").attr("src","image/karışıkpizza.png")  
+          }else{
+              
           }
 
-          var val2=$(this).val();
-          if(val2=="30"){
-              $(".resiml").attr("src","image/sucuklukpizza.png")
-          }
-          else if(val2=="25"){
-            $(".resimm").attr("src","image/sucuklukpizza.png")
-          }
-          else if(val2=="20"){
-            $(".resims").attr("src","image/sucuklukpizza.png")  
-          }
+          
 
 
 

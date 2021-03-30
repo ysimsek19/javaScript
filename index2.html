@@ -26,17 +26,17 @@
 
     <select id="secim" >
         <option value="0" >Seçiniz</option>
-        <option value="1" data-resim="image/karışıkpizza.png" data-malzeme="biber,domates,mantar,sucuk,zeytin,jonbon,sucuk" data-fiyat="25,20,15">Karışık</option>
-        <option value="2" data-resim="image/sucuklupizza.jpg" data-malzeme="sucuk,biber,zeytin,peynir" data-fiyat="30,25,20">Sucuklu</option>
-        <option value="3" data-resim="image/mantarlipizza.png" data-malzeme="mantar, mozerella peynir, biber, zeytin" data-fiyat="27,22,18">Mantarlı</option>
+        <option value="1" data-resim="image/karışıkpizza.png" data-malzeme="biber,domates,mantar,sucuk,zeytin,jonbon,sucuk" data-fiyat="25,20,15"  >Karışık</option>
+        <option value="2" data-resim="image/sucuklupizza.jpg" data-malzeme="sucuk,biber,zeytin,peynir" data-fiyat="30,25,20" >Sucuklu</option>
+        <option value="3" data-resim="image/mantarlipizza.png" data-malzeme="mantar, mozerella peynir, biber, zeytin"  data-fiyat="40,30,20">Mantarlı</option>
       </select>
       <label class="malzeme"></label>
-      <label class="fiyat"></label>
+      
         <div id="kutu"></div> 
 
     <form name="toplam">
         
-        <img class="pizza" src="image/karışıkpizza.png" class="resiml" alt="" style="width: 200px; height: 200px;"> 
+        <img class="pizza" src="image/karışıkpizza.png"  alt="" style="width: 200px; height: 200px;"> 
         <input type="radio" name="islem" value="25" checked id="buyuk"  > Büyük Boy (33 cm)
         <img src="image/karışıkpizza.png" class="resimm" alt="" style="width: 150px; height: 150px;"> 
         <input type="radio" name="islem" value="20" id="orta"> Orta Boy (25 cm)
@@ -44,11 +44,12 @@
         <input type="radio" name="islem" value="15" id="kucuk"> Küçük Boy (18 cm) <br>
         <label id="secimfiyati"></label>
         </form>
-    <br> <input type="text" id="pizza" placeholder="pizza sayısı" onkeyup="myFunction()" value="4">
+    <br> <input type="text" id="pizza" placeholder="pizza sayısı" onkeyup="myFunction()" value="1">
     <input type="text" id="pizzaex" placeholder="pizza ek">
-    <input type="text" id="durum" placeholder="durum sayısı">
-    <input type="text" id="kola" placeholder="adet">
-    <button   class="ui primary button"  value="Hesapla" id="toplamtutar" onclick="toplamtutar()">  Hesabla </button>
+    <input type="text" id="durum" placeholder="pizza dürüm">
+    <input type="text" id="kola" placeholder="içecek">
+    <input type="button" value="Hesapla" id="toplamtutar" onclick="toplamtutar()">
+    
     
  
     <label for="">Toplam Ödeme</label>
@@ -70,7 +71,27 @@
     <script>
       
      
+      function myFunction(){
+    
+    var fiyat=document.querySelector('input[name="islem"]:checked').value;
+    var pizza=document.getElementById("pizza").value;
+document.getElementById("pizzafiyati").innerHTML=parseInt(fiyat)*parseInt(pizza);
 
+}
+
+function toplamtutar(){ 
+    
+    var pizza=document.getElementById("pizza").value;
+    var durum=document.getElementById("durum").value;
+    var pizzaex=document.getElementById("pizzaex").value;
+    var kola=document.getElementById("kola").value;
+
+var pizzatoplam=parseInt(pizza)*parseInt(document.querySelector('input[name="islem"]:checked').value);
+    var thesap="";
+    //thesap=parseInt(pizzatoplam)+(parseInt(durum)*16)+(parseInt(pizzaex)*3)+(parseInt(kola)*9);
+    thesap=parseInt(pizzatoplam)+parseInt(pizzaex*3)+parseInt(durum*16)+parseInt(kola*9)
+    document.getElementById("tutar").value=thesap;
+} 
  
 
 
