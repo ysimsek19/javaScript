@@ -18,7 +18,7 @@ isimGeetir("yalcin")
 
 var a,b,c; 
 a=5;
-b=10;
+b=120;
 c=a+b;
 document.getElementById("topla").innerHTML=c;
 
